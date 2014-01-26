@@ -130,8 +130,8 @@ Make it something you're proud to look at.
 * [Active Record errors][errors]
 
 
-[sandbox challenge]: https://github.com/Devbootcamp/sinatra-sandbox-challenge
-[proper formatting challenge]: https://github.com/Devbootcamp/layout-drill-proper-typesetting-challenge
+[sandbox challenge]: https://github.com/sea-lions-2014/sinatra-sandbox-challenge
+[proper formatting challenge]: https://github.com/sea-lions-2014/layout-drill-proper-typesetting-challenge
 [AR validations]: http://guides.rubyonrails.org/active_record_validations_callbacks.html
 [valid_invalid]: http://guides.rubyonrails.org/active_record_validations_callbacks.html#valid-and-invalid
 [errors]: http://guides.rubyonrails.org/active_record_validations_callbacks.html#validations_overview-errors
