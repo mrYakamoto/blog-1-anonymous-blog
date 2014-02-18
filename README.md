@@ -6,6 +6,8 @@
 * Model relationships in a relational database (one-to-one, one-to-many, many-to-many).
 * Use ActiveRecord to create Associations between database tables.
 * Use ActiveRecord Validations.
+* Use unit tests to ensure model function
+* Use controller tests to ensure controller function
 
 ## Summary
 
@@ -20,11 +22,13 @@ server.
 We'll have two core models: `Post`s and `Tag`s. A `Post` can have many `Tag`s
 and a `Tag` can be on many `Post`s.
 
-### Setting up the skeleton
+## Skeleton
 
-Clone the [Sinatra Skeleton](../../../sinatra_skeleton_mvc) into the current directory with: `git clone SINATRA_SKELETON_URI`
+Clone the [Sinatra Skeleton](../../../sinatra_skeleton_mvc) into the current
+directory with: `git clone SINATRA_SKELETON_URI`
 
 Check reality by running `ls`, you should see:
+
 ```
 README.md            sinatra_skeleton_mvc
 ```
@@ -33,7 +37,8 @@ README.md            sinatra_skeleton_mvc
 
 Remove the `.git` directory from `sinatra_skeleton_mvc` with `rm -rf .git/`
 
-Add the `sinatra_skeleton_mvc` directory to the Craigslist Jr project with `git add .` then commit with `git commit -m "Adds Sinatra Skeleton."`
+Add the `sinatra_skeleton_mvc` directory to the project with `git add .` then
+commit with `git commit -m "Adds Sinatra Skeleton."`
 
 ## Releases
 
@@ -60,7 +65,12 @@ These are the operations we want to support for posts:
 We want to support the operation for tags: "Show me all posts with a given
 tag."
 
-Tags will be created via the `Post`-creation form.
+Tags will be created via the `Post`-creation form.  You should add controller
+tests for these routes.  We're not going to specify how to implement these
+henceforth, but you are now responsible for realizing which routes should be
+tested and how they should be tested.  Simply because the requirements of
+challenges do not require you to write a test, you discern when the addition of
+a test should be wise.  This is just like The Real World.&trade;
 
 ### Release 1: Models & Validations
 
@@ -82,9 +92,36 @@ class Post < ActiveRecord::Base
 end
 ```
 
-You'll have other fields and validations, to be sure. What fields do you want your blog post to have? Author?
+You'll have other fields and validations, to be sure.  What fields do you want
+your blog post to have?  Author?
 
-### Release 2: Design Simple Pages and Forms
+### Release 2:  Add Unit Tests
+
+Making sure that all your models are correct *without* automated testing is a
+real bummer.  Try adding **UNIT TESTS**.
+
+[Unit tests][] are short tests that verify your models function as expected.
+The skeleton ships with a sample unit test to get you going (`band_spec`).  Try
+creating a new `Post` that violates its constraints.  That instance should
+return `false` for its [`valid?`][valid_invalid] method.  Or, you could ask
+that instance for its [`.errors`][errors].  You can uses these data to build
+tests to make sure your models function.
+
+As you grow as a developer you'll discover models that aren't strictly bound to
+a table and you'll want to test them as well. Imagine an `EncryptionService` or
+an `AnagramGenerator` class.  These classes would definitely benefit from
+having unit tests around them to verify that their implementations work.  To
+help you on that path the skeleton ships with a non-Active Record-backed model
+and spec (`demo` and `demo_spec`, repsectively).
+
+While it may not have been said explicitly it's worth saying it now:  **MODELS
+IN THE MVC PATTERN DO NOT HAVE TO BE BACKED BY A TABLE / IMPLEMENT
+`ActiveRecord::Base`**
+
+Good unit testing is a powerful tool in helping to create good
+object-orientation!
+
+### Release 3: Design Simple Pages and Forms
 
 Design simple pages and forms to implement all the above functionality. It
 doesn't need to be styled well, but if your HTML is well-structured it will
@@ -117,7 +154,7 @@ to see all posts for a given tag at a url like
 http://localhost:9393/tag/apple
 ```
 
-### Release 3: Error Cases
+### Release 4: Error Cases
 
 Using [valid? and invalid?][valid_invalid] and the [errors][errors] methods,
 make sure you're handling your error cases gracefully. It doesn't need to be
@@ -127,7 +164,7 @@ perfect, but good error handling means:
 2. The user is presented with an opportunity to correct the mistake, if possible
 3. The user is given as much guidance as possible about that they need to do to fix the error
 
-### Release 4: Style! Style! Style!
+### Release 5: Style! Style! Style!
 
 You might want to do the [Layout Drill: Proper Typesetting][proper formatting
 challenge] first, if you haven't. But following the guidelines from that
@@ -137,6 +174,7 @@ Make it something you're proud to look at.
 
 ## Resources
 
+* [Unit tests][]
 * [DBC Sandbox Challenge][sandbox challenge]
 * [DBC Proper Typesetting Challenge][proper formatting challenge]
 * [ActiveRecord validations][AR validations]
@@ -148,3 +186,4 @@ Make it something you're proud to look at.
 [AR validations]: http://guides.rubyonrails.org/active_record_validations_callbacks.html
 [valid_invalid]: http://guides.rubyonrails.org/active_record_validations_callbacks.html#valid-and-invalid
 [errors]: http://guides.rubyonrails.org/active_record_validations_callbacks.html#validations_overview-errors
+[Unit tests]: http://en.wikipedia.org/wiki/Unit_testing
