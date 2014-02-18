@@ -98,18 +98,25 @@ your blog post to have?  Author?
 ### Release 2:  Add Unit Tests
 
 Making sure that all your models are correct *without* automated testing is a
-real bummer.  Try adding **UNIT TESTS**.  Unit tests are short tests that
-verify your models function as expected.  The skeleton ships with a sample unit
-test to get you going.  Try creating a new `Post` that violates its
-constraints.  That instance should return `false` for its `valid?` method.  Or,
-you could ask that instance for its `.errors`.  You can uses these data to
-build tests to make sure your models function.  More documentation on these
-validation methods can be found in the Resources section below.
+real bummer.  Try adding **UNIT TESTS**.
+
+[Unit tests][] are short tests that verify your models function as expected.
+The skeleton ships with a sample unit test to get you going (`band_spec`).  Try
+creating a new `Post` that violates its constraints.  That instance should
+return `false` for its [`valid?`][valid_invalid] method.  Or, you could ask
+that instance for its [`.errors`][errors].  You can uses these data to build
+tests to make sure your models function.
 
 As you grow as a developer you'll discover models that aren't strictly bound to
 a table and you'll want to test them as well. Imagine an `EncryptionService` or
 an `AnagramGenerator` class.  These classes would definitely benefit from
-having unit tests around them to verify that their implementations work.
+having unit tests around them to verify that their implementations work.  To
+help you on that path the skeleton ships with a non-Active Record-backed model
+and spec (`demo` and `demo_spec`, repsectively).
+
+While it may not have been said explicitly it's worth saying it now:  **MODELS
+IN THE MVC PATTERN DO NOT HAVE TO BE BACKED BY A TABLE / IMPLEMENT
+`ActiveRecord::Base`**
 
 Good unit testing is a powerful tool in helping to create good
 object-orientation!
@@ -167,6 +174,7 @@ Make it something you're proud to look at.
 
 ## Resources
 
+* [Unit tests][]
 * [DBC Sandbox Challenge][sandbox challenge]
 * [DBC Proper Typesetting Challenge][proper formatting challenge]
 * [ActiveRecord validations][AR validations]
@@ -178,3 +186,4 @@ Make it something you're proud to look at.
 [AR validations]: http://guides.rubyonrails.org/active_record_validations_callbacks.html
 [valid_invalid]: http://guides.rubyonrails.org/active_record_validations_callbacks.html#valid-and-invalid
 [errors]: http://guides.rubyonrails.org/active_record_validations_callbacks.html#validations_overview-errors
+[Unit tests]: http://en.wikipedia.org/wiki/Unit_testing
