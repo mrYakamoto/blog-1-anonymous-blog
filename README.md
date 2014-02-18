@@ -154,7 +154,7 @@ to see all posts for a given tag at a url like
 http://localhost:9393/tag/apple
 ```
 
-### Release 3: Error Cases
+### Release 4: Error Cases
 
 Using [valid? and invalid?][valid_invalid] and the [errors][errors] methods,
 make sure you're handling your error cases gracefully. It doesn't need to be
@@ -164,7 +164,7 @@ perfect, but good error handling means:
 2. The user is presented with an opportunity to correct the mistake, if possible
 3. The user is given as much guidance as possible about that they need to do to fix the error
 
-### Release 4: Style! Style! Style!
+### Release 5: Style! Style! Style!
 
 You might want to do the [Layout Drill: Proper Typesetting][proper formatting
 challenge] first, if you haven't. But following the guidelines from that
