@@ -6,6 +6,8 @@
 * Model relationships in a relational database (one-to-one, one-to-many, many-to-many).
 * Use ActiveRecord to create Associations between database tables.
 * Use ActiveRecord Validations.
+* Use unit tests to ensure model function
+* Use controller tests to ensure controller function
 
 ## Summary
 
