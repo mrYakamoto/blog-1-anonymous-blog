@@ -24,7 +24,7 @@ and a `Tag` can be on many `Post`s.
 
 ## Skeleton
 
-Clone the [Sinatra Skeleton](../../../sinatra_skeleton_mvc) into the current
+Clone the [Sinatra Skeleton](../../../sinatra-skeleton-mvc) into the current
 directory with: `git clone SINATRA_SKELETON_URI`
 
 Check reality by running `ls`, you should see:
