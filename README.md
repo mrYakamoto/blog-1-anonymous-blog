@@ -63,7 +63,12 @@ These are the operations we want to support for posts:
 We want to support the operation for tags: "Show me all posts with a given
 tag."
 
-Tags will be created via the `Post`-creation form.
+Tags will be created via the `Post`-creation form.  You should add controller
+tests for these routes.  We're not going to specify how to implement these
+henceforth, but you are now responsible for realizing which routes should be
+tested and how they should be tested.  Simply because the requirements of
+challenges do not require you to write a test, you discern when the addition of
+a test should be wise.  This is just like The Real World.&trade;
 
 ### Release 1: Models & Validations
 
@@ -85,9 +90,29 @@ class Post < ActiveRecord::Base
 end
 ```
 
-You'll have other fields and validations, to be sure. What fields do you want your blog post to have? Author?
+You'll have other fields and validations, to be sure.  What fields do you want
+your blog post to have?  Author?
 
-### Release 2: Design Simple Pages and Forms
+### Release 2:  Add Unit Tests
+
+Making sure that all your models are correct *without* automated testing is a
+real bummer.  Try adding **UNIT TESTS**.  Unit tests are short tests that
+verify your models function as expected.  The skeleton ships with a sample unit
+test to get you going.  Try creating a new `Post` that violates its
+constraints.  That instance should return `false` for its `valid?` method.  Or,
+you could ask that instance for its `.errors`.  You can uses these data to
+build tests to make sure your models function.  More documentation on these
+validation methods can be found in the Resources section below.
+
+As you grow as a developer you'll discover models that aren't strictly bound to
+a table and you'll want to test them as well. Imagine an `EncryptionService` or
+an `AnagramGenerator` class.  These classes would definitely benefit from
+having unit tests around them to verify that their implementations work.
+
+Good unit testing is a powerful tool in helping to create good
+object-orientation!
+
+### Release 3: Design Simple Pages and Forms
 
 Design simple pages and forms to implement all the above functionality. It
 doesn't need to be styled well, but if your HTML is well-structured it will
