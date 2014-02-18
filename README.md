@@ -20,11 +20,13 @@ server.
 We'll have two core models: `Post`s and `Tag`s. A `Post` can have many `Tag`s
 and a `Tag` can be on many `Post`s.
 
-### Setting up the skeleton
+## Skeleton
 
-Clone the [Sinatra Skeleton](../../../sinatra_skeleton_mvc) into the current directory with: `git clone SINATRA_SKELETON_URI`
+Clone the [Sinatra Skeleton](../../../sinatra_skeleton_mvc) into the current
+directory with: `git clone SINATRA_SKELETON_URI`
 
 Check reality by running `ls`, you should see:
+
 ```
 README.md            sinatra_skeleton_mvc
 ```
@@ -33,7 +35,8 @@ README.md            sinatra_skeleton_mvc
 
 Remove the `.git` directory from `sinatra_skeleton_mvc` with `rm -rf .git/`
 
-Add the `sinatra_skeleton_mvc` directory to the Craigslist Jr project with `git add .` then commit with `git commit -m "Adds Sinatra Skeleton."`
+Add the `sinatra_skeleton_mvc` directory to the project with `git add .` then
+commit with `git commit -m "Adds Sinatra Skeleton."`
 
 ## Releases
 
